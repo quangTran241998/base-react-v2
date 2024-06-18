@@ -1,4 +1,4 @@
-import { indexElement } from "@/consts/common";
+import { indexElement } from "@/constants/common";
 import PushUpService from "@/services/pushUpPage";
 import { CSSProperties, ReactNode, useEffect } from "react";
 
@@ -64,7 +64,13 @@ export default PushUp;
 const IconClose = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={12} height={13} fill="none">
-      <path stroke="#333" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m11 1.5-10 10m0-10 10 10" />
+      <path
+        stroke="#333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m11 1.5-10 10m0-10 10 10"
+      />
     </svg>
   );
 };

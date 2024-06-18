@@ -45,7 +45,9 @@
 @layer base {
   .focus-input {
     @apply outline-none border-blue-400 border-[2px]
-
+  }
+  .overlay {
+    @apply fixed bottom-0 left-0 right-0 top-0 flex h-screen w-full items-center justify-center;
   }
 }
 
