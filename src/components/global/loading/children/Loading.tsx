@@ -17,7 +17,17 @@ const LoadingPage = (props: ILoadingGlobal) => {
   if (!visible) return <div />;
   return (
     <>
-      <div className="overlay">loading...</div>
+      <div className="overlay">
+        <div className="honeycomb">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </>
   );
 };
