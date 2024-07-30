@@ -9,6 +9,8 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        greenMain: "#2dbe60",
+        desc: "#4c4d4d",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -59,6 +61,14 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "banner-top": "url('https://harnishdesign.net/demo/html/payyed/images/bg/image-3.jpg')",
+        "banner-receive-top": "url('https://harnishdesign.net/demo/html/payyed/images/bg/image-5.jpg')",
+        solution: "url('https://harnishdesign.net/demo/html/payyed/images/anyone-freelancer.jpg')",
+      },
+      backgroundColor: {
+        container: "#f5f5f5",
       },
     },
   },

@@ -1,11 +1,6 @@
 import "./App.css";
 // import "antd/dist/antd.css";
-import {
-  BrowserRouter as Router,
-  Outlet,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Outlet, Route, Routes } from "react-router-dom";
 import routes from "./routes/routes";
 import { Suspense } from "react";
 import PrivateRoute from "./components/PrivateRoute";
@@ -19,15 +14,13 @@ import LoadingPageService from "./services/loadingPage";
 import PopupService from "./services/popupPage";
 import PushUpService from "./services/pushUpPage";
 import React from "react";
-import LoadingPageGlobal, {
-  GlobalLoadingPage,
-} from "./components/global/loading";
-import GlobalPopupConfirm, {
-  GlobalPopupConfirmRef,
-} from "./components/global/popup";
-import GlobalPushUpConfirm, {
-  GlobalPushUpConfirmRef,
-} from "./components/global/push-up";
+import LoadingPageGlobal, { GlobalLoadingPage } from "./components/global/loading";
+import GlobalPopupConfirm, { GlobalPopupConfirmRef } from "./components/global/popup";
+import GlobalPushUpConfirm, { GlobalPushUpConfirmRef } from "./components/global/push-up";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
   return (

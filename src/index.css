@@ -49,5 +49,28 @@
   .overlay {
     @apply fixed bottom-0 left-0 right-0 top-0 flex h-screen w-full items-center justify-center bg-black opacity-50;
   }
+  /* text */
+  .h1 {
+    @apply text-[20px] md:text-[64px] font-bold
+  }
+  .h2 {
+    @apply text-[18px] md:text-[36px] font-bold
+  }
+  .h3 {
+    @apply text-[16px] md:text-[20px] font-bold
+  }
+  .h4 {
+    @apply text-[16px] md:text-[16px] font-bold
+  }
+  .desc-20 {
+    @apply text-[16px] md:text-[20px] font-medium
+  }
+
+  .grid-col2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-x-10 items-center gap-y-4
+  }
+  .grid-col4 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 items-center gap-y-4
+  }
 }
 
