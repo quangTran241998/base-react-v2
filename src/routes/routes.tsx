@@ -5,8 +5,8 @@ import { BaseRoute } from "@/constants/baseRoute";
 
 // Bash importHere
 const DefaultLayout = lazy(() => import("../layouts/DefaultLayout"));
-const Login = lazy(() => import("../pages/login"));
-const Homepage = lazy(() => import("../pages/home"));
+const Login = lazy(() => import("../pages/Login"));
+const Homepage = lazy(() => import("../pages/Home"));
 const Components = lazy(() => import("../pages/DemoComponents"));
 
 interface Route {
