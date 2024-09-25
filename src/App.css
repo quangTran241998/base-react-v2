@@ -117,3 +117,8 @@
   left: 0;
   top: 0;
 }
+
+.ql-align-center {
+  display: flex;
+  justify-content: center;
+}
