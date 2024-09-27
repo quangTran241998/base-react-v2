@@ -1,12 +1,39 @@
 import { useMemo, useRef, useState } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import kiểu mặc định của Quill
 
-function App() {
+const BlockEmbed = Quill.import("blots/block/embed");
+
+class CustomVideoBlot extends BlockEmbed {
+  static create(value: any) {
+    const wrapper = document.createElement("div");
+    wrapper.setAttribute("class", "video-wrapper"); // Áp dụng class cho container
+
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute("src", value);
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    iframe.setAttribute("allowfullscreen", "true");
+
+    wrapper.appendChild(iframe); // Thêm iframe vào trong div
+
+    return wrapper;
+  }
+
+  static value(node: any) {
+    return node.querySelector("iframe").getAttribute("src");
+  }
+}
+
+CustomVideoBlot.blotName = "customVideo";
+CustomVideoBlot.tagName = "div";
+Quill.register(CustomVideoBlot);
+
+function Editor() {
   const [value, setValue] = useState("");
   const quillRef = useRef<any>(null);
 
-  console.log(value, "123");
+  // console.log(value, "123");
 
   const imageHandler = () => {
     const editor = quillRef.current.getEditor();
@@ -30,6 +57,15 @@ function App() {
     };
   };
 
+  const insertVideo = () => {
+    const videoUrl = prompt("Nhập URL của video:");
+    if (videoUrl) {
+      const editor = quillRef.current.getEditor();
+      const range = editor.getSelection();
+      editor.insertEmbed(range.index, "customVideo", videoUrl);
+    }
+  };
+
   const modules = useMemo(
     () => ({
       toolbar: {
@@ -45,6 +81,7 @@ function App() {
 
         handlers: {
           image: imageHandler,
+          video: insertVideo,
         },
         history: {
           delay: 500,
@@ -67,4 +104,4 @@ function App() {
   );
 }
 
-export default App;
+export default Editor;
