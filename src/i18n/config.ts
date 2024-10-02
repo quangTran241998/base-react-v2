@@ -4,13 +4,12 @@ import { translateTextVn } from "./vi/shared";
 import { translateTextEn } from "./en/shared";
 import { LOCAL_STORAGE_KEYS } from "@/constants/localStorageKeys";
 
-export const LANG_ENUM = {
-  vi: "vi",
-  en: "en",
-};
+export enum LANG_ENUM {
+  VI = "vi",
+  EN = "en",
+}
 
-const currentLng =
-  localStorage.getItem(LOCAL_STORAGE_KEYS.KEY_LANG) || LANG_ENUM.en;
+const currentLng = localStorage.getItem(LOCAL_STORAGE_KEYS.KEY_LANG) || LANG_ENUM.VI;
 
 export const defaultNS = "shared";
 

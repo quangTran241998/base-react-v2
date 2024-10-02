@@ -74,6 +74,10 @@
   }
 }
 
+.bg-gradient-main {
+  background: linear-gradient(90deg, #F9A51A 0%, #FD0 100%);
+}
+
 .ant-form-item-row {
   position: relative;
 }

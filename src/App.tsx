@@ -64,25 +64,59 @@ function App() {
                   }
                 >
                   {route.routeChild.map((child, idx) => {
-                    return (
-                      <Route
-                        key={`${child.path}-${idx}`}
-                        path={child.path}
-                        element={
-                          <Suspense>
-                            <ErrorBoundary FallbackComponent={ErrorFallback}>
-                              {child.isPrivateRoute ? (
-                                <PrivateRoute>
+                    if (child.routeChild) {
+                      return (
+                        <Route
+                          path={child.path}
+                          element={
+                            <PrivateRoute>
+                              <Outlet />
+                            </PrivateRoute>
+                          }
+                        >
+                          {child.routeChild.map((child) => {
+                            return (
+                              <Route
+                                path={child.path}
+                                element={
+                                  <Suspense>
+                                    <ErrorBoundary FallbackComponent={ErrorFallback}>
+                                      {child.isPrivateRoute ? (
+                                        <PrivateRoute>
+                                          <child.component />
+                                        </PrivateRoute>
+                                      ) : (
+                                        <child.component />
+                                      )}
+                                    </ErrorBoundary>
+                                  </Suspense>
+                                }
+                              />
+                            );
+                          })}
+                        </Route>
+                      );
+                    } else {
+                      return (
+                        <Route
+                          key={`${child.path}-${idx}`}
+                          path={child.path}
+                          element={
+                            <Suspense>
+                              <ErrorBoundary FallbackComponent={ErrorFallback}>
+                                {child.isPrivateRoute ? (
+                                  <PrivateRoute>{child.component ? <child.component /> : <></>}</PrivateRoute>
+                                ) : child.component ? (
                                   <child.component />
-                                </PrivateRoute>
-                              ) : (
-                                <child.component />
-                              )}
-                            </ErrorBoundary>
-                          </Suspense>
-                        }
-                      />
-                    );
+                                ) : (
+                                  <></>
+                                )}
+                              </ErrorBoundary>
+                            </Suspense>
+                          }
+                        />
+                      );
+                    }
                   })}
                 </Route>
               );

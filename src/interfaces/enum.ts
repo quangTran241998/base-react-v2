@@ -1,6 +1,15 @@
+// export enum PERMISSION_ENUM {
+//   PUBLIC = "PUBLIC",
+//   ADMIN = "admin",
+//   USER = "user",
+//   APP_MANAGER = "appmanager",
+// }
+
 export enum PERMISSION_ENUM {
-  PUBLIC = "PUBLIC",
-  ADMIN = "admin",
-  USER = "user",
-  APP_MANAGER = "appmanager",
+  SYSTEMADMIN = 1,
+  SYSTEMOPS = 2,
+  SALEOPS = 3,
+  CUSTOMERSERVICE = 4,
 }
+
+export const PERMISSION_ALL = [PERMISSION_ENUM.SYSTEMADMIN, PERMISSION_ENUM.CUSTOMERSERVICE, PERMISSION_ENUM.SYSTEMOPS, PERMISSION_ENUM.SALEOPS];
