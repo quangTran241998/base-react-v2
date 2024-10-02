@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: #DDDDDD;
+    --border-error: red;
+
+    --input: #d1d5db;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  .focus-input {
+    @apply outline-none border-blue-400 border-[2px]
+  }
+  .overlay {
+    @apply fixed bottom-0 left-0 right-0 top-0 flex h-screen w-full items-center justify-center bg-black opacity-50;
+  }
+  /* text */
+  .h1 {
+    @apply text-[20px] md:text-[64px] font-bold
+  }
+  .h2 {
+    @apply text-[18px] md:text-[36px] font-bold
+  }
+  .h3 {
+    @apply text-[16px] md:text-[20px] font-bold
+  }
+  .h4 {
+    @apply text-[16px] md:text-[16px] font-bold
+  }
+  .desc-20 {
+    @apply text-[16px] md:text-[20px] font-medium
+  }
+
+  .grid-col2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-x-10 items-center gap-y-4
+  }
+  .grid-col4 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 items-center gap-y-4
+  }
+}
+
+.ant-form-item-row {
+  position: relative;
+}
+.ant-form-item-label {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  top:2px
+}
+.ant-form-item-row .ant-form-item-label label {
+  font-size: 12px;
+}
