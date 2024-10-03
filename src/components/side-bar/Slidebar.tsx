@@ -99,13 +99,9 @@ const Sidebar = () => {
         </div>
       </div>
       <div className=" px-5">
-        <div className="flex items-center px-3 py-3 gap-x-2 text-white cursor-pointer">
-          <iconsSvg.HelpIcon />
-          <p>{t("help")}</p>
-        </div>
         <div className="flex items-center px-3 py-3 gap-x-2 text-white cursor-pointer" onClick={logout}>
           <iconsSvg.LogoutIcon />
-          <p>{t("logout")}</p>
+          <p>{"Đăng xuất"}</p>
         </div>
         <div
           className=" flex justify-between items-center border border-[#5C5C5C] rounded-sm px-3 py-3 mt-4 cursor-pointer"

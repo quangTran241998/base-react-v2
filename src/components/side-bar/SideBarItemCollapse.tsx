@@ -52,7 +52,7 @@ const SidebarItemCollapse = (props: Props) => {
                 }}
               >
                 {<item.Icon color={isActiveRouteChild ? "#333" : "white"} />}
-                <p className={`title-sidebar-child text-white font-medium ${isActiveRouteChild ? "text-[#333] [&&]:font-bold" : ""}`}>
+                <p className={`title-sidebar-child text-white font-medium ${isActiveRouteChild ? "[&&]:text-[#333] [&&]:font-bold" : ""}`}>
                   {item.displayText}
                 </p>
               </div>

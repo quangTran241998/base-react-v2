@@ -3,6 +3,7 @@ import React from "react";
 
 const OverviewIcon = (props: Omit<React.SVGProps<SVGSVGElement> & IColors, "icon">) => {
   const { color } = props;
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" {...props}>
       <path
