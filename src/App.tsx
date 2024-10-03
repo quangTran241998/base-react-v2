@@ -21,6 +21,11 @@ import GlobalPushUpConfirm, { GlobalPushUpConfirmRef } from "./components/global
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ConfigProvider } from "antd";
+import dayjs from "dayjs";
+import "dayjs/locale/vi";
+dayjs.locale("vi");
+import viVN from "antd/es/locale/vi_VN";
 
 const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
   return (
@@ -134,9 +139,35 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <StateGlobalProvider>
-        <AuthenticationProvider>{renderContent()}</AuthenticationProvider>
-      </StateGlobalProvider>
+      <ConfigProvider
+        locale={viVN}
+        theme={{
+          token: {
+            colorBorder: "#DDDDDD",
+          },
+          components: {
+            Table: {
+              headerBorderRadius: 0,
+              cellPaddingBlock: 13,
+              cellPaddingInline: 13,
+            },
+            DatePicker: {
+              colorPrimary: "#F4B321",
+              controlItemBgActive: "#FEF7E9",
+              colorTextLightSolid: "#000",
+              fontSize: 15,
+              cellHeight: 35,
+              cellWidth: 35,
+              boxShadowSecondary: "none",
+              hoverBorderColor: "#ccc",
+            },
+          },
+        }}
+      >
+        <StateGlobalProvider>
+          <AuthenticationProvider>{renderContent()}</AuthenticationProvider>
+        </StateGlobalProvider>
+      </ConfigProvider>
     </I18nextProvider>
   );
 }

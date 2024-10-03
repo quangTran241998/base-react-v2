@@ -10,4 +10,3 @@ const ChevronDown = (props: Omit<React.SVGProps<SVGSVGElement> & IColors, "icon"
 };
 
 export default ChevronDown;
-670;

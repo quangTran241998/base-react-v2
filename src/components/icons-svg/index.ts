@@ -1,9 +1,14 @@
 import AvatarIcon from "./children/Avatar";
+import CheckSelect from "./children/CheckSelect";
 import ChevronDown from "./children/ChevronDown";
+import CloseTextInputIcon from "./children/CloseTextInput";
 import DateIcon from "./children/Date";
 import DealerManagementIcon from "./children/DealerManagement";
 import DeleteIcon from "./children/Delete";
+import DownloadIcon from "./children/Download";
+import EyeIcon from "./children/Eye";
 import HelpIcon from "./children/Help";
+import HideEyeIcon from "./children/HideEye";
 import InputOutputManagementIcon from "./children/InputOutputManagement";
 import LogoSkyfi from "./children/LogoSkyfi";
 import LogoutIcon from "./children/Logout";
@@ -32,4 +37,9 @@ export const iconsSvg = {
   DateIcon,
   DeleteIcon,
   SearchIcon,
+  DownloadIcon,
+  HideEyeIcon,
+  EyeIcon,
+  CloseTextInputIcon,
+  CheckSelect,
 };

@@ -12,3 +12,14 @@ export const gender = [
     value: "female",
   },
 ];
+
+export const listUser = [
+  {
+    label: "Quang",
+    key: "1",
+  },
+  {
+    label: "Nam",
+    key: "2",
+  },
+];

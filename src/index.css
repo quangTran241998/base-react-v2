@@ -42,6 +42,44 @@
   }
 }
 
+body {
+  font-family: "KoHo", sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: bold
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold
+}
+h3 {
+  font-size: 22px;
+  font-weight: bold
+}
+h4 {
+  font-size: 20px;
+  font-weight: bold
+}
+h5 {
+  font-size:18px;
+  font-weight: bold
+}
+h6 {
+  font-size: 16px;
+  font-weight: bold
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
 @layer base {
   .focus-input {
     @apply outline-none border-blue-400 border-[2px]
@@ -71,6 +109,14 @@
   }
   .grid-col4 {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 items-center gap-y-4
+  }
+
+  .invalid-text {
+    @apply text-[14px] text-red-500;
+  }
+
+  .input {
+    @apply pt-[18px] pb-1 px-4 w-full bg-[#fff] font-medium text-[#333] rounded-sm pr-11 disabled:bg-[#EBEBEB] border border-[#DDDDDD] focus:border-[#333] hover:border-[#333]
   }
 }
 

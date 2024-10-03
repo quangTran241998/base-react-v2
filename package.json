@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^5.18.2",
     "axios": "^1.7.2",
+    "dayjs": "^1.11.13",
     "formik": "^2.4.6",
     "html-react-parser": "^5.1.10",
     "i18next": "^23.11.5",

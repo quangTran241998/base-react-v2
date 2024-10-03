@@ -49,6 +49,10 @@ export interface Option {
   value: string | number;
 }
 
+export interface OptionSelect {
+  label: string;
+  key: string | number;
+}
 export interface OptionExportFile {
   label: string;
   value: string | number;
