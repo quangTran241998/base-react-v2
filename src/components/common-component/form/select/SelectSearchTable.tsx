@@ -4,7 +4,6 @@ import { ReactNode, useRef, useState } from "react";
 import { iconsSvg } from "../../../icons-svg/index";
 
 interface Props {
-  label: string;
   placeholder: string;
   icon?: ReactNode;
   options: OptionSelect[];

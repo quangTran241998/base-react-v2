@@ -22,7 +22,7 @@ export default {
         infoBase: "#2f74ff",
       },
       borderColor: {
-        default: "#F1F1F1",
+        default: "#DDDDDD",
         disabled: "#EBEBEB",
         outlineYellow: "#CC8F14",
       },

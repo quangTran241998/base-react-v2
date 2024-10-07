@@ -1,6 +1,7 @@
 import { iconsSvg } from "@/components/icons-svg";
 import { DatePicker } from "antd";
 import styled from "styled-components";
+import { dateFormatList } from "./index";
 
 interface Props {
   onChangeParam: (dateRange: string[]) => void;
@@ -18,8 +19,6 @@ const StyledDatePicker = styled(RangePicker)`
     }
   }
 `;
-
-const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY", "DD-MM-YYYY", "DD-MM-YY"];
 
 const DatepickerRangeSearch = ({ onChangeParam }: Props) => (
   <StyledDatePicker
