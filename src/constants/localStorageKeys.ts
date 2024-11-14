@@ -1,0 +1,15 @@
+export const LOCAL_STORAGE_KEYS = {
+  TOKEN: "token",
+  USER: "user",
+  KEY_LANG: "lang",
+  ID_PACKAGE: "idPackage",
+  ID_ORDER: "idOrder",
+  ID_DEVICE: "idDevice",
+  PAYMENT_METHOR: "paymentMethor",
+  FIRTS_LOGIN: "firstLogin",
+  USERNAME: "username",
+  PASSWORD: "password",
+  SAVE_ACCOUNT: "saveAccount",
+  EMAIL_LOGIN: "emailLogin",
+  PAGE_SIZE: "page-size",
+};

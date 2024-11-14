@@ -1,0 +1,27 @@
+
+
+.ql-align-center:has(img) {
+  display: flex;
+  justify-content: center;
+}
+
+.ql-align-right:has(img) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%; /* Chiều rộng của iframe sẽ chiếm toàn bộ khung chứa */
+  padding-bottom: 56.25%; /* Chiều cao bằng 56.25% của chiều rộng (tỷ lệ 16:9) */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Bỏ viền */
+}
