@@ -10,20 +10,24 @@ const Homepage = lazy(() => import("../pages/Home"));
 const Components = lazy(() => import("../pages/DemoComponents"));
 const About = lazy(() => import("../pages/about"));
 const Contact = lazy(() => import("../pages/contact"));
+const Articles = lazy(() => import("../pages/articles"));
 
 interface Route {
   name: string;
   path: string;
   isPrivateRoute?: boolean;
-  layout:
-    | React.LazyExoticComponent<React.MemoExoticComponent<any>>
-    | React.ExoticComponent<any>
-    | typeof React.Component;
+  layout: React.LazyExoticComponent<React.MemoExoticComponent<any>> | React.ExoticComponent<any> | typeof React.Component;
   routeChild: {
     name: string;
     path: string;
-    component: typeof React.Component | React.FC;
+    component?: typeof React.Component | React.FC;
     isPrivateRoute?: boolean;
+    routeChild?: {
+      name: string;
+      path: string;
+      component: typeof React.Component | React.FC;
+      isPrivateRoute?: boolean;
+    }[];
   }[];
 }
 
@@ -66,6 +70,19 @@ const routes: Route[] = [
         name: "Contact",
         path: BaseRoute.Contact,
         component: withCheckRole(Contact, PERMISSON_ALL),
+      },
+
+      {
+        name: "Cms",
+        path: BaseRoute.Cms,
+        isPrivateRoute: true,
+        routeChild: [
+          {
+            name: "Articles",
+            path: BaseRoute.Articles,
+            component: withCheckRole(Articles, PERMISSON_ALL),
+          },
+        ],
       },
     ],
   },

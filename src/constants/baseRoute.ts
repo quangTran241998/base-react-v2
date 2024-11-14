@@ -3,7 +3,8 @@ export const BaseRoute = {
   Auth: "/auth",
   Login: "/auth/login",
   Components: "/components",
-  About: "/cms/about",
-  Contact: "/cms/contact",
+  About: "/about",
+  Contact: "/contact",
   Cms: "/cms",
+  Articles: "/cms/articles",
 };

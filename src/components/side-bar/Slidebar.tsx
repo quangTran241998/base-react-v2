@@ -24,7 +24,15 @@ const Sidebar = () => {
       listPathActive: [BaseRoute.Homepage],
     },
     {
-      path: BaseRoute.Homepage,
+      path: BaseRoute.About,
+      displayText: "About",
+      Icon: iconsSvg.DealerManagementIcon,
+      isChildren: false,
+      isPermisson: isCheckRole([PERMISSION_ENUM.ADMIN], roleUser),
+      listPathActive: [BaseRoute.About],
+    },
+    {
+      path: BaseRoute.Cms,
       displayText: "Cms",
       Icon: iconsSvg.SalesManagementIcon,
       isChildren: true,
@@ -32,14 +40,8 @@ const Sidebar = () => {
       isPermisson: isCheckRole([PERMISSION_ENUM.ADMIN], roleUser),
       children: [
         {
-          displayText: "About",
-          path: BaseRoute.About,
-          Icon: iconsSvg.OverviewIcon,
-          isPermisson: isCheckRole([PERMISSION_ENUM.ADMIN], roleUser),
-        },
-        {
-          displayText: "Contact",
-          path: BaseRoute.Contact,
+          displayText: "Articles",
+          path: BaseRoute.Articles,
           Icon: iconsSvg.WholesaleIcon,
           isPermisson: isCheckRole([PERMISSION_ENUM.ADMIN], roleUser),
         },
@@ -76,19 +78,12 @@ const Sidebar = () => {
         </div>
         <div className="px-5">
           {data?.map((route: RouteType, index: number) => {
-            return !route.isChildren ? (
-              <SidebarItem key={index} item={route}></SidebarItem>
-            ) : (
-              <SidebarItemCollapse key={index} item={route} />
-            );
+            return !route.isChildren ? <SidebarItem key={index} item={route}></SidebarItem> : <SidebarItemCollapse key={index} item={route} />;
           })}
         </div>
       </div>
       <div className=" px-5">
-        <div
-          className="flex items-center px-3 py-3 gap-x-2 text-white cursor-pointer"
-          onClick={logout}
-        >
+        <div className="flex items-center px-3 py-3 gap-x-2 text-white cursor-pointer" onClick={logout}>
           <iconsSvg.LogoutIcon />
           <p>{"Đăng xuất"}</p>
         </div>
